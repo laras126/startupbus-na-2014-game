@@ -37,6 +37,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Authentication
 gem "devise", "~> 3.0.3"
+gem 'omniauth-twitter'
+gem 'protected_attributes'
 
 # Use unicorn as the app server
 # gem 'unicorn'
