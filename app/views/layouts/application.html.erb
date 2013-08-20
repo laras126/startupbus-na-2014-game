@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 	<% if user_signed_in? %>
 		Signed In As <%= current_user.email %>.
 		<span>Logged in as <%= current_user.username %>.</span>
