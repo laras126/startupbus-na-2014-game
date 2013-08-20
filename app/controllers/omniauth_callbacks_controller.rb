@@ -8,6 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 			sign_in_and_redirect user
 		else
 			session["devise.user_attributes"] = user.attributes
+			flash.notice = "This didn't work :("
 			redirect_to new_user_registration_url
 		end
 	end
