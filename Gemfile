@@ -37,10 +37,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Authentication
 gem "devise", "~> 3.0.3"
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'protected_attributes'
-
+gem 'certified'
 
 group :development do
   gem 'meta_request'
