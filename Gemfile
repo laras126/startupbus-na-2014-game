@@ -47,6 +47,8 @@ group :development do
   gem 'meta_request'
 end
 
+gem "twitter-bootstrap-rails", "~> 2.2.8"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
