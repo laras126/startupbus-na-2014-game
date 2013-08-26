@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -47,7 +47,8 @@ group :development do
   gem 'meta_request'
 end
 
-gem "twitter-bootstrap-rails", "~> 2.2.8"
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
