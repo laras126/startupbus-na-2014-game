@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = "jonmarkgo@startupbus.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -227,8 +227,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  # config.omniauth :twitter, 'IEe3LZ7mhKK2yXvRZvhNQ', 'J1DPpqs5eOAtsyOeG4oTRSxwI0o27k0uov7FCGYG80'
-  config.omniauth :facebook, '171287943056603', '9a382042db6e0108d032e00c7f214f14',:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+  config.omniauth :twitter, 'O2ACv7lZE8wMg7w0aMrqQ', '6cHT8iiT7KUi8W3uZhZTomVC9ntYPNt7pmKhRFtgBc'
+  config.omniauth :facebook, '517020078411196', 'a1e65d6359154a1ec7000333539d6138' #,:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
