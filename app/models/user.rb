@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
     attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :name
 
-    validates_presence_of :email
+    #validates_presence_of :email
     validates_uniqueness_of :email
 
     def email_required?
