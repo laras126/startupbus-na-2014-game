@@ -1,4 +1,7 @@
 == StartupBus North America 2014 Game
+Current Build Status: http://imgur.com/7jTAyib.png
+
+
 Our goal this year is to create an experience that (organically as possible) measures the progress of teams and helps keep them on track building their companies.
 The secondary goal is to engage the outside world and build interest in the StartupBus teams as well as our organization and its sponsors.
 
