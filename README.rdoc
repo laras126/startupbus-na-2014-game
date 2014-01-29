@@ -1,1 +1,26 @@
 == StartupBus North America 2014 Game
+Our goal this year is to create an experience that (organically as possible) measures the progress of teams and helps keep them on track building their companies.
+The secondary goal is to engage the outside world and build interest in the StartupBus teams as well as our organization and its sponsors.
+
+Fantasy StartupBus Investor
+You are a VC who must build the best possible portfolio to compete against all other investors for the best combination of teams from StartupBus.
+Your portfolio is measured by the scores of each of your teams. Their score is determined by their progress on milestones, their social media buzz, their web traffic, and external factors such as press.
+The success of a team in the game will act as a sort of tie breaker for the qualification round of the competition.
+
+As a fantasy investor, you can directly impact the success or failure of your teams. This may be done using referral tracking - we will track how much traffic, tweets, signups, etc. you refer to each team and weight your score as needed based on your direct impact. We will also provide opportunities for you to directly engage with your teams as an alpha/beta tester in user feedback and advisory sessions.
+You may also weight the performance of your portfolio by inviting your friends to help share and generate traffic for your teams.
+
+The milestones will be created to reflect what teams are organically working on, but also to force teams to get outside of their comfort zones. The intention is to design them in such a way as to prevent 'gaming' the system.
+Examples of milestones:
+-making a basic founder's agreement
+-setting up a social media presence w/ team name
+-launching your landing page
+-drafting a business plan
+-launching your application prototype
+-creating a pitch video
+-drafting and pitching a press release (you may get points for the # and reach of articles that get published)
+-uploading team bios
+-participate in a mentorship session with a buspreneur alum
+-writing a blog post about your progress on the bus
+-utilization of ELance (yeah...)
+etc.
