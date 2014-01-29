@@ -3,7 +3,7 @@ Our goal this year is to create an experience that (organically as possible) mea
 The secondary goal is to engage the outside world and build interest in the StartupBus teams as well as our organization and its sponsors.
 
 Fantasy StartupBus Investor
----------------------------
+---------------------
 You are a VC who must build the best possible portfolio to compete against all other investors for the best combination of teams from StartupBus.
 Your portfolio is measured by the scores of each of your teams. Their score is determined by their progress on milestones, their social media buzz, their web traffic, and external factors such as press.
 The success of a team in the game will act as a sort of tie breaker for the qualification round of the competition.
