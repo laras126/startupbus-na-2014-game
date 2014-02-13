@@ -49,6 +49,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'protected_attributes'
 gem 'certified'
+gem 'cancan'
+gem 'rolify'
 
 group :development do
   gem 'meta_request'
