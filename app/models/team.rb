@@ -5,6 +5,7 @@ class Team < ActiveRecord::Base
   validates :description, :presence => true
 
   has_many :users
+  belongs_to :bus
 
 
 end
