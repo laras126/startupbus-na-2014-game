@@ -65,3 +65,11 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+end
