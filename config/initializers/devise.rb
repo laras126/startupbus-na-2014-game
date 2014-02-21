@@ -227,8 +227,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :twitter, 'O2ACv7lZE8wMg7w0aMrqQ', '6cHT8iiT7KUi8W3uZhZTomVC9ntYPNt7pmKhRFtgBc'
-  config.omniauth :facebook, '517020078411196', 'a1e65d6359154a1ec7000333539d6138' #,:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+  config.omniauth :twitter, '', ''
+  config.omniauth :facebook, '', '' #,:client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
