@@ -1,9 +1,9 @@
+$red: #FF4444;
 
 // Navigation bar
 nav {
-	height: 60px;
-	color: #FFF;
-	background-color: #FF4444;
+	color: white;
+	background-color: $red;
 
 	a {
 		color: #FFF;
@@ -15,9 +15,14 @@ nav {
 			text-decoration: none;
 		}
 	}
-	.nav-links {
-		float: right;
-		margin: 15px 15px 0 0;
+	.navbar-text {
+		text-transform: uppercase;
+		color: lighten($red, 20%);
+		font-size: 0.8em;
+		padding-top: 3px;
+	}
+	.navbar-right {
+		.navbar-text { float: none; display: inline-block; }
 	}
 }
 
