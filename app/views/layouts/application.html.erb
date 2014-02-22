@@ -7,35 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container-fluid">
-	    <div class="row-fluid">
-	    	<header class="span12">
-				<nav class="clearfix">
-					<div class="nav-links">
-						<% if user_signed_in? %>
-						<span class="glyphicon glyphicon-user"></span>
-						Signed In As <%= current_user.name %>.
-						<!-- <span>Logged in as <#%= current_user.name %>.</span> -->
-						Not You? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-						<% else %>
-						<%=	link_to "Sign Up", new_user_registration_path %> | 
-						<%= link_to "Sign In", new_user_session_path %> |
-						<!-- <#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
-						<%= link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook) %>
-						<% end %>
-					</div>
-				</nav>
-	    	</header>
-			<div id="main" class="span12">
-				<div class="well">
-					<p class="alert alert-success"><%= notice %></p>
-					<p class="alert alert-danger"><%= alert %></p>
-					<%= yield %>
-				</div>
+	<div class="container">
+		<nav>
+			<div class="nav-links">
+				<% if user_signed_in? %>
+				<span class="glyphicon glyphicon-user"></span>
+				Signed In As <%= current_user.name %>.
+				<!-- <span>Logged in as <#%= current_user.name %>.</span> -->
+				Not You? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+				<% else %>
+				<%=	link_to "Sign Up", new_user_registration_path %> | 
+				<%= link_to "Sign In", new_user_session_path %> |
+				<!-- <#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
+				<%= link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook) %>
+				<% end %>
 			</div>
-		</div>
-	</div>
-		
+		</nav>
 
+		<% if notice %>
+		<p class="alert alert-success"><%= notice %></p>
+		<% end %>
+
+		<% if alert %>
+		<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+	
+		<%= yield %>
+	</div>
 </body>
 </html>
