@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-		<nav>
+	<nav>
+		<div class="container">
 			<div class="nav-links">
 				<% if user_signed_in? %>
 				<span class="glyphicon glyphicon-user"></span>
@@ -16,13 +16,21 @@
 				<!-- <span>Logged in as <#%= current_user.name %>.</span> -->
 				Not You? <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
 				<% else %>
-				<%= link_to "Sign In", new_user_session_path %> |
+
+				<a href="<%= new_user_session_path %>" class="btn btn-default">Sign In</a>
+
+				&nbsp;or&nbsp;
+				
+				<a href="<%= user_omniauth_authorize_path(:facebook) %>" class="btn btn-primary  btn-sm">
+				Sign In With Facebook</a>
+
 				<!-- <#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
-				<%= link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook) %>
 				<% end %>
 			</div>
-		</nav>
+		</div>
+	</nav>
 
+	<div class="container">
 		<% if notice %>
 		<p class="alert alert-success"><%= notice %></p>
 		<% end %>
