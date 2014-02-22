@@ -29,3 +29,9 @@ Examples of milestones:
 - writing a blog post about your progress on the bus
 - utilization of ELance (yeah...)
 - etc.
+
+
+=== Get started
+* `bundle install`
+* `rails s`
+* `rake db:migrate RAILS_ENV=development` if need be
