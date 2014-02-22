@@ -9,6 +9,9 @@ DeviseApp::Application.routes.draw do
   root to: "home#index"
 
   resources :dashboard
+  resources :teams
+  resources :buses
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,3 +1,25 @@
 <h1>Welcome To Your Dashboard, Bro.</h1>
 
 <%= link_to 'Your Profile, Brah', 'http://omfgdogs.com/' %><br/>
+
+<h2>Pick a team or <%= link_to 'Create One', "teams/new" %></h2>
+
+<table>
+  <tr>
+    <th>Bus</th>
+    <th>Team Name</th>
+  </tr>
+  <% @buses.each do |bus| %>
+  <tr>
+    <th><%= bus.name %></th>
+  </tr>
+    <% bus.teams.each do |team| %>
+    <tr>
+      <td></td>
+      <td><%= team.name %></td>
+      <td><%= link_to "Join This Team", team %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+
