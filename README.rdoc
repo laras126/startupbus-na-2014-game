@@ -32,9 +32,9 @@ Examples of milestones:
 
 
 === Get started
-* `bundle install`
-* `rails s`
-* `rake db:migrate RAILS_ENV=development` if need be
+# bundle install`
+# rails s
+# rake db:migrate RAILS_ENV=development
 
 
 === User Types
