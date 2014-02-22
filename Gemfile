@@ -4,13 +4,13 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.0'
 
 group :production do
-    gem "pg"
-    gem "dm-postgres-adapter"
+    gem 'pg'
+    gem 'dm-postgres-adapter'
 end
 
 group :development, :test do
-    gem "sqlite3"
-    gem "dm-sqlite-adapter"
+    gem 'sqlite3'
+    gem 'dm-sqlite-adapter'
 end
 
 # Use SCSS for stylesheets
@@ -43,7 +43,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Authentication
-gem "devise", "~> 3.0.3"
+gem 'devise', '~> 3.0.3'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -56,8 +56,7 @@ group :development do
   gem 'meta_request'
 end
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use unicorn as the app server
 # gem 'unicorn'
