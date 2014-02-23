@@ -11,7 +11,7 @@ class Team < ActiveRecord::Base
     Team.all.sort_by {|team| team.ranking}
   end
 
-  def pending_approvals
-    User.where(:team_id => self.id, :team_status => "pending")
-  end
+  #def pending_approvals
+    #User.where(:team_id => self.id, :team_status => "pending")
+  #end
 end

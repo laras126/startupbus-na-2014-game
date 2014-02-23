@@ -53,6 +53,8 @@ gem 'cancan'
 
 group :development do
   gem 'meta_request'
+  gem 'better_errors', git: 'https://github.com/charliesome/better_errors.git'
+  gem 'binding_of_caller'
 end
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
