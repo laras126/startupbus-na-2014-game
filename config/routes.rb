@@ -8,6 +8,9 @@ DeviseApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: "home#index"
 
+  get 'users/team_approval_request'
+  get 'users/team_approval_confirm'
+
   resources :dashboard
   resources :teams
   resources :buses

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :name
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :first_name, :last_name, :name, :team_id, :team_status
 
     #validates_presence_of :email
     validates_uniqueness_of :email

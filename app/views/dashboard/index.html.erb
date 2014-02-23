@@ -2,24 +2,17 @@
 
 <%= link_to 'Your Profile, Brah', 'http://omfgdogs.com/' %><br/>
 
-<h2>Pick a team or <%= link_to 'Create One', "teams/new" %></h2>
+<% if current_user.team_status.nil? %>
+  <h2>Pick a team or <%= link_to 'Create One', "teams/new" %></h2>
+<% end %>  
 
-<table>
-  <tr>
-    <th>Bus</th>
-    <th>Team Name</th>
-  </tr>
-  <% @buses.each do |bus| %>
-  <tr>
-    <th><%= bus.name %></th>
-  </tr>
-    <% bus.teams.each do |team| %>
-    <tr>
-      <td></td>
-      <td><%= team.name %></td>
-      <td><%= link_to "Join This Team", team %></td>
-    </tr>
-    <% end %>
-  <% end %>
-</table>
+<% if current_user.team && current_user.team.pending_approvals.present? %>
+   <% current_user.team.pending_approvals.each do |approval_request_user| %>
+    <h3>New Teammate Pending Approval for <%= approval_request_user.team.name %>: <%= approval_request_user.name %> 
+      <%= link_to 'Approve', controller: "users", action: "team_approval_confirm", user_id: approval_request_user.id %></h3>
+  <% end %>  
+<% end %>  
+
+<%= render 'team_ranking' %>
+
 
