@@ -1,5 +1,7 @@
 class Buspreneur < Omniauthable
-  belongs_to :team, polymorphic: true
+  belongs_to :team, polymorphic: true, inverse_of: :buspreneurs
+
+  delegate :bus, to: :team
 
   def approved?
     approved_at.present?
