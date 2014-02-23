@@ -30,12 +30,11 @@ Welcome, <%= current_omniauthable.name %>!
 <%= link_to 'Dashboard', root_path %>
 </li>
 <li>
-<%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
+            Not You? <%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
 </li>
 <% else %>
-<a href="<%= new_omniauthable_session_path %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
-            <%= link_to "Sign Up", new_omniauthable_registration_path %>
-            <%= link_to "Sign In With Facebook", omniauthable_omniauth_authorize_path(:facebook) %>
+<a href="#" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
+              <%= link_to "Sign In With Facebook", :class => "btn btn-default btn-facebook", omniauthable_omniauth_authorize_path(:facebook) %>
 
 <% end %>
 
@@ -60,6 +59,8 @@ Welcome, <%= current_omniauthable.name %>!
 
   <div class="container">
   <%= yield %>
+
+
   </div>
 </body>
 </html>
