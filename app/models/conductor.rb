@@ -19,4 +19,12 @@ class Conductor < ActiveRecord::Base
     super && provider.blank?
   end
 
+  def approved?
+    approved_at.present?
+  end
+
+  def approve!
+    touch :approved_at
+  end
+
 end
