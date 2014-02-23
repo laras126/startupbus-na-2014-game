@@ -53,3 +53,17 @@ end
     team.buspreneurs << buspreneur
   end
 end
+
+%w(
+  joe
+  steve
+  fred
+  wilson
+  spaldin
+).each do |investor_name|
+    investor = Investor.find_by(email: "#{investor_name}@gmail.com")
+    Investment.find_or_create_by(investor_id: investor.id, team_id: Team.last.id, amount: 100)
+    Investment.find_or_create_by(investor_id: investor.id, team_id: Team.first.id, amount: 82)
+end
+
+
