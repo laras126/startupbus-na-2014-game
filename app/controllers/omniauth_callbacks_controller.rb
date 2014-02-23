@@ -1,7 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     # raise request.env["omniauth.auth"].to_yaml
-    omniauthable = Omniauthable.from_omniauth(request.env["omniauth.auth"])
+    omniauthable = Investor.from_omniauth(request.env["omniauth.auth"])
 
     if omniauthable.persisted?
       flash.notice = "Signed In, Bro!"
