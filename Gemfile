@@ -54,9 +54,12 @@ gem 'rolify'
 
 group :development do
   gem 'meta_request'
+  gem 'guard-livereload', require: false
+
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'font-awesome-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

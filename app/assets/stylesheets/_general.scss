@@ -1,21 +1,23 @@
 $red: #FF4444;
+$facebookBlue: #4A629E;
+
 
 // Navigation bar
 nav {
 	color: white;
-	background-color: $red;
+	background-color: red;
 
 	a {
 		color: #FFF;
 		text-decoration: none;
-		font-size: 20px;
+		//font-size: 20px;
 		padding: 15px 0;
 		&:hover {
 			color: #D1D1D1;
 			text-decoration: none;
 		}
 	}
-	.navbar-text {
+	.navbar-header .navbar-text {
 		text-transform: uppercase;
 		color: lighten($red, 20%);
 		font-size: 0.8em;
@@ -23,8 +25,22 @@ nav {
 	}
 	.navbar-right {
 		.navbar-text { float: none; display: inline-block; }
+.btn {
+margin-top: 8px;
+}
+
 	}
 }
+
+.btn-facebook {
+	background-color: $facebookBlue;
+	border: 1px solid darken($facebookBlue, 10%);
+	color: white;
+	i {
+margin-right: 6px;
+	}
+}
+
 
 // Login area with forms
 .login {
