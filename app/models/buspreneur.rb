@@ -1,4 +1,6 @@
 class Buspreneur < Omniauthable
+  belongs_to :team, polymorphic: true
+
   def approved?
     approved_at.present?
   end

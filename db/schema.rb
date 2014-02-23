@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223193147) do
+ActiveRecord::Schema.define(version: 20140223194300) do
 
   create_table "buses", force: true do |t|
     t.string   "name"
     t.float    "ranking"
-    t.integer  "conductor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
