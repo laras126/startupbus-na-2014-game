@@ -29,3 +29,23 @@ Examples of milestones:
 - writing a blog post about your progress on the bus
 - utilization of ELance (yeah...)
 - etc.
+
+
+=== Get started
+# bundle install
+
+# rails s
+
+# rake db:migrate RAILS_ENV=development
+
+
+=== User Types
+*Busprenuers*
+- can create or join buses
+- can edit profiles
+- oauth with their Wordpress accounts
+
+
+*Investors*
+- don't have teams or buses
+- view and invest in teams/buses
