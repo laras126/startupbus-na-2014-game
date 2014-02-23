@@ -1,17 +1,14 @@
 DeviseApp::Application.routes.draw do
-  devise_for :investors
-  devise_for :conductors
-  get "user/show"
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-                     controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :omniauthable,
+    path_names: { sign_in: "login", sign_out: "logout" },
+    controllers: { omniauth_callbacks: "omniauth_callbacks" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root to: "home#index"
-
-  get 'users/team_approval_request'
-  get 'users/team_approval_confirm'
+  resources :conductors
+  resources :buspreneurs
+  resources :investors
 
   resources :dashboard
   resources :teams
@@ -51,7 +48,7 @@ DeviseApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
@@ -65,4 +62,8 @@ DeviseApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # You can have the root of your site routed with "root"
+  root to: "home#index"
+
 end

@@ -11,6 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 <nav>
 <div class="container">
 <div class="navbar-header">
@@ -39,8 +40,24 @@ Sign In With Facebook</a>
 <#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
 <% end %>
 </div>
+
+            <% if omniauthable_signed_in? %>
+            <span class="glyphicon glyphicon-user"></span>
+            Signed In As <%= current_omniauthable.name %>.
+            <!-- <span>Logged in as <#%= current_omniauthable.name %>.</span> -->
+            Not You? <%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
+            <% else %>
+            <%= link_to "Sign Up", new_omniauthable_registration_path %> |
+            <%= link_to "Sign In", new_omniauthable_session_path %> |
+            <!-- <#%= link_to "Sign in with Twitter", omniauthable_omniauth_authorize_path(:twitter) %> -->
+            <%= link_to "Sign In With Facebook", omniauthable_omniauth_authorize_path(:facebook) %>
+            <% end %>
+
 </div>
 </nav>
+
+
+
 
 <% if notice %>
 <p class="alert alert-success"><%= notice %></p>
@@ -53,5 +70,6 @@ Sign In With Facebook</a>
 <div class="container">
 <%= yield %>
 </div>
+
 </body>
 </html>

@@ -14,9 +14,6 @@
       <td></td>
       <td></td>
       <td><%= team.name %></td>
-      <% if current_user.present? && current_user.team_status.nil? %>
-        <td><%= link_to 'Join This Team', controller: "users", action: "team_approval_request", team_id: team.id %></td>
-      <% end %>
     </tr>
     <% end %>
   <% end %>
