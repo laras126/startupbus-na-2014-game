@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223185003) do
+ActiveRecord::Schema.define(version: 20140223193147) do
 
   create_table "buses", force: true do |t|
     t.string   "name"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20140223185003) do
     t.integer  "approved_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachable_type"
+    t.integer  "attachable_id"
   end
 
   add_index "omniauthables", ["email"], name: "index_omniauthables_on_email", unique: true
