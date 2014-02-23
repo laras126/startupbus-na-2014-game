@@ -8,6 +8,6 @@ end
               :github_url => "www.github.com/#{startup_name}", :description => "#{startup_name} is worth 20 billion dollars")
 end
 
-User.create(email: "blane@gmail.com", first_name: "Blane", last_name: "Cordes", username: "BC00", name: "Blane Cordes", password: "test1234")
-User.create(email: "blane1@gmail.com", first_name: "Bob", last_name: "Cord", username: "BJC00", name: "Bob Cord", password: "test1234", team_id: 1, team_status: "pending")
-User.create(email: "blane2@gmail.com", first_name: "Boy", last_name: "Cordesss", username: "thing00", name: "Boy Cordesss", password: "test1234")
+Buspreneur.create(email: "blane@gmail.com", username: "BC00", name: "Blane Cordes", password: "test1234")
+Buspreneur.create(email: "blane1@gmail.com", username: "BJC00", name: "Bob Cord", password: "test1234", team_id: 1)
+Buspreneur.create(email: "blane2@gmail.com", username: "thing00", name: "Boy Cordesss", password: "test1234")
