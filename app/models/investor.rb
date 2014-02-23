@@ -1,0 +1,2 @@
+class Investor < Omniauthable
+end

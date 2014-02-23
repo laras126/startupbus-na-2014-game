@@ -50,10 +50,11 @@ gem 'omniauth-twitter'
 gem 'protected_attributes'
 gem 'certified'
 gem 'cancan'
-gem 'rolify'
 
 group :development do
   gem 'meta_request'
+  gem 'better_errors', git: 'https://github.com/charliesome/better_errors.git'
+  gem 'binding_of_caller'
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
