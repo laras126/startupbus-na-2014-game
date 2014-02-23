@@ -11,43 +11,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">The Game</a>
+        <p class="navbar-text">North American 2014 Bus</p>
+      </div>
 
-<nav>
-<div class="container">
-<div class="navbar-header">
-<a class="navbar-brand" href="#">The Game</a>
-<p class="navbar-text">North American 2014 Bus</p>
-</div>
-
-<ul class="nav navbar-nav navbar-right">
-<% if omniauthable_signed_in? %>
-<li>
-<p class="navbar-text">
-Welcome, <%= current_omniauthable.name %>!
-</p>
-</li>
-<li>
-<%= link_to 'Dashboard', root_path %>
-</li>
-<li>
-            Not You? <%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
-</li>
-<% else %>
-<a href="#" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
-              <%= link_to "Sign In With Facebook", :class => "btn btn-default btn-facebook", omniauthable_omniauth_authorize_path(:facebook) %>
-
-<% end %>
-
-</div>
-
-
-
-
-</div>
-</nav>
-
-
-
+      <ul class="nav navbar-nav navbar-right">
+      <% if omniauthable_signed_in? %>
+        <li>
+          <p class="navbar-text">Welcome, <%= current_omniauthable.name %>!</p>
+        </li>
+        <li>
+          <%= link_to 'Dashboard', root_path %>
+        </li>
+        <li>
+          <%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
+        </li>
+      <% else %>
+        <a href="<%= omniauthable_omniauth_authorize_path(:facebook) %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
 
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -59,8 +46,6 @@ Welcome, <%= current_omniauthable.name %>!
 
   <div class="container">
   <%= yield %>
-
-
   </div>
 </body>
 </html>
