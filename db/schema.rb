@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223170154) do
+ActiveRecord::Schema.define(version: 20140223170623) do
 
   create_table "buses", force: true do |t|
     t.string   "name"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 20140223170154) do
 
   add_index "conductors", ["email"], name: "index_conductors_on_email", unique: true
   add_index "conductors", ["reset_password_token"], name: "index_conductors_on_reset_password_token", unique: true
+
+  create_table "milestones", force: true do |t|
+    t.string   "name",                                null: false
+    t.text     "description"
+    t.integer  "max_points",              default: 0
+    t.datetime "target_completion_date"
+    t.text     "validation_instructions"
+    t.text     "public_instructions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "milestones", ["name"], name: "index_milestones_on_name"
+  add_index "milestones", ["target_completion_date"], name: "index_milestones_on_target_completion_date"
 
   create_table "teams", force: true do |t|
     t.string   "name"
