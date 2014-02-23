@@ -43,13 +43,19 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Authentication
-gem 'devise', '~> 3.0.3'
+gem 'devise',              github: 'plataformatec/devise'
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack'
+gem 'activeadmin',         github: 'gregbell/active_admin'
+gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'protected_attributes'
 gem 'certified'
 gem 'cancan'
+gem 'data_mapper'
 
 group :development do
   gem 'meta_request'
