@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<<<<<<< HEAD
+
 <nav>
 <div class="container">
 <div class="navbar-header">
@@ -20,38 +20,29 @@
 </div>
 
 <ul class="nav navbar-nav navbar-right">
-<% if user_signed_in? %>
+<% if omniauthable_signed_in? %>
 <li>
 <p class="navbar-text">
-Welcome, <%= current_user.name %>!
+Welcome, <%= current_omniauthable.name %>!
 </p>
 </li>
 <li>
 <%= link_to 'Dashboard', root_path %>
 </li>
 <li>
-<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+<%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
 </li>
 <% else %>
-<a href="<%= new_user_session_path %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
+<a href="<%= new_omniauthable_session_path %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
+            <%= link_to "Sign Up", new_omniauthable_registration_path %>
+            <%= link_to "Sign In With Facebook", omniauthable_omniauth_authorize_path(:facebook) %>
 
-<!-- <a href="<%= user_omniauth_authorize_path(:facebook) %>" class="btn btn-primary btn-sm"> 
-Sign In With Facebook</a>
-<#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
 <% end %>
+
 </div>
 
-            <% if omniauthable_signed_in? %>
-            <span class="glyphicon glyphicon-user"></span>
-            Signed In As <%= current_omniauthable.name %>.
-            <!-- <span>Logged in as <#%= current_omniauthable.name %>.</span> -->
-            Not You? <%= link_to "Sign Out", destroy_omniauthable_session_path, :method => :delete %>
-            <% else %>
-            <%= link_to "Sign Up", new_omniauthable_registration_path %> |
-            <%= link_to "Sign In", new_omniauthable_session_path %> |
-            <!-- <#%= link_to "Sign in with Twitter", omniauthable_omniauth_authorize_path(:twitter) %> -->
-            <%= link_to "Sign In With Facebook", omniauthable_omniauth_authorize_path(:facebook) %>
-            <% end %>
+
+
 
 </div>
 </nav>
@@ -59,17 +50,16 @@ Sign In With Facebook</a>
 
 
 
-<% if notice %>
-<p class="alert alert-success"><%= notice %></p>
-<% end %>
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+  <% end %>
 
-<% if alert %>
-<p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
-<div class="container">
-<%= yield %>
-</div>
-
+  <div class="container">
+  <%= yield %>
+  </div>
 </body>
 </html>
