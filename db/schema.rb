@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223171451) do
+ActiveRecord::Schema.define(version: 20140223173942) do
 
   create_table "buses", force: true do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140223171451) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "conductors", ["email"], name: "index_conductors_on_email", unique: true
@@ -52,6 +54,8 @@ ActiveRecord::Schema.define(version: 20140223171451) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "investors", ["email"], name: "index_investors_on_email", unique: true
