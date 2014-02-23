@@ -1,4 +1,5 @@
 DeviseApp::Application.routes.draw do
+  devise_for :investors
   devise_for :conductors
   get "user/show"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
