@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223173942) do
+ActiveRecord::Schema.define(version: 20140223175636) do
 
   create_table "buses", force: true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140223173942) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "approved_at"
   end
 
   add_index "conductors", ["email"], name: "index_conductors_on_email", unique: true
@@ -110,6 +111,8 @@ ActiveRecord::Schema.define(version: 20140223173942) do
     t.string   "last_name"
     t.integer  "team_id"
     t.string   "team_status"
+    t.datetime "approved_at"
+    t.integer  "approved_by"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
