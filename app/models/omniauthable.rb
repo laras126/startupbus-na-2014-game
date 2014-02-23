@@ -3,7 +3,14 @@ class Omniauthable < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
-  devise :omniauthable, :trackable, :rememberable
+  devise \
+    :database_authenticatable,
+    :registerable,
+    :omniauthable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable
 
   #validates_presence_of :email
   validates_uniqueness_of :email
