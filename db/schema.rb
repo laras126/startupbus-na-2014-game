@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140223204035) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buses", force: true do |t|
     t.string   "name"
     t.float    "ranking"
@@ -39,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140223204035) do
     t.datetime "updated_at"
   end
 
-  add_index "milestones", ["name"], name: "index_milestones_on_name"
-  add_index "milestones", ["target_completion_date"], name: "index_milestones_on_target_completion_date"
+  add_index "milestones", ["name"], name: "index_milestones_on_name", using: :btree
+  add_index "milestones", ["target_completion_date"], name: "index_milestones_on_target_completion_date", using: :btree
 
   create_table "omniauthables", force: true do |t|
     t.string   "type"
@@ -66,8 +69,8 @@ ActiveRecord::Schema.define(version: 20140223204035) do
     t.integer  "attachable_id"
   end
 
-  add_index "omniauthables", ["email"], name: "index_omniauthables_on_email", unique: true
-  add_index "omniauthables", ["reset_password_token"], name: "index_omniauthables_on_reset_password_token", unique: true
+  add_index "omniauthables", ["email"], name: "index_omniauthables_on_email", unique: true, using: :btree
+  add_index "omniauthables", ["reset_password_token"], name: "index_omniauthables_on_reset_password_token", unique: true, using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "name"
@@ -81,6 +84,6 @@ ActiveRecord::Schema.define(version: 20140223204035) do
     t.integer  "bus_id"
   end
 
-  add_index "teams", ["bus_id"], name: "index_teams_on_bus_id"
+  add_index "teams", ["bus_id"], name: "index_teams_on_bus_id", using: :btree
 
 end

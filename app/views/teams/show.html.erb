@@ -1,2 +1,13 @@
-<h1>Team#show</h1>
-<p>Find me in app/views/team/show.html.erb</p>
+<h1><%= @team.name %></h1>
+
+<p>Score: <%= content_tag :b, @team.score %></p>
+
+<h3>Buspreneurs</h3>
+<ul>
+  <%= render @team.buspreneurs %>
+</ul>
+
+<p>
+  <%= render @team.investments %>
+</p>
+<p>Total: <%= content_tag :b, @team.funding %>

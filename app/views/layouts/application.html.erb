@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -10,11 +11,12 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
   <nav>
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">The Game</a>
+        <%= link_to "The Game", root_path, class: "navbar-brand" %>
         <p class="navbar-text">North American 2014 Bus</p>
       </div>
 

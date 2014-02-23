@@ -17,4 +17,12 @@ class Team < ActiveRecord::Base
   #def pending_approvals
     #User.where(:team_id => self.id, :team_status => "pending")
   #end
+
+  def funding
+    0
+  end
+
+  def score
+    0
+  end
 end

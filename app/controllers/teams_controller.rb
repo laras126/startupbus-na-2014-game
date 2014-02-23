@@ -4,6 +4,10 @@ class TeamsController < ApplicationController
     @team = Team.new
   end
 
+  def show
+    @team = Team.find(params[:id])
+  end
+
   def index
     @teams = Team.all
   end
@@ -24,8 +28,8 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:description, 
-    :name, :website, :twitter_handle, :facebook_url, :github_url, :bus_id)
+    params.require(:team).permit :description,
+      :name, :website, :twitter_handle, :facebook_url, :github_url, :bus_id
   end
 
 end
