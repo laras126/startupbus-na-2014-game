@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>The Game | Startup Bus 2014</title>
-<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
+  <title>The Game | Startup Bus 2014</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
-		<div class="container">
+<nav>
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">The Game</a>
+<p class="navbar-text">North American 2014 Bus</p>
+</div>
 
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">The Game</a>
-				<p class="navbar-text">North American 2014 Bus</p>
-			</div>
+<ul class="nav navbar-nav navbar-right">
+<% if user_signed_in? %>
+<li>
+<p class="navbar-text">
+Welcome, <%= current_user.name %>!
+</p>
+</li>
+<li>
+<%= link_to 'Dashboard', root_path %>
+</li>
+<li>
+<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+</li>
+<% else %>
+<a href="<%= new_user_session_path %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
 
-			<ul class="nav navbar-nav navbar-right">
-				<% if user_signed_in? %>
-				<li>
-					<p class="navbar-text">
-						Welcome, <%= current_user.name %>!
-					</p>
-				</li>
+<!-- <a href="<%= user_omniauth_authorize_path(:facebook) %>" class="btn btn-primary btn-sm"> 
+Sign In With Facebook</a>
+<#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
+<% end %>
+</div>
+</div>
+</nav>
 
-				<li>
-					<%= link_to "Sign Out", destroy_user_session_path, :class => "blue", :method => :delete %>
-				</li>
+<% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
 
-				<% else %>
+<% if alert %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
-
-				<a href="<%= new_user_session_path %>" class="btn btn-default btn-facebook"><i class="fa fa-facebook"></i> Sign In</a>
-					
-
-
-
-					<!-- <a href="<%= user_omniauth_authorize_path(:facebook) %>" class="btn btn-primary btn-sm"> 
-					Sign In With Facebook</a>
-					<#%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %> -->
-				<% end %>
-			</div>
-		</div>
-	</nav>
-
-	<div class="container">
-		<% if notice %>
-		<p class="alert alert-success"><%= notice %></p>
-		<% end %>
-
-		<% if alert %>
-		<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
-	
-		<%= yield %>
-	</div>
+<div class="container">
+<%= yield %>
+</div>
 </body>
 </html>
