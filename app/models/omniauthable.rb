@@ -5,9 +5,9 @@ class Omniauthable < ActiveRecord::Base
 
   devise \
     :database_authenticatable,
-    :registerable,
     :omniauthable,
     :recoverable,
+    :registerable,
     :rememberable,
     :trackable,
     :validatable
@@ -29,7 +29,7 @@ class Omniauthable < ActiveRecord::Base
   end
 
   def password_required?
-    super && provider.blank?
+    false
   end
 
   def update_with_password(params, *options)

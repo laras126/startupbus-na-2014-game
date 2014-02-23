@@ -6,6 +6,8 @@ class Team < ActiveRecord::Base
 
   has_many :buspreneurs, as: :attachable
 
+  has_many :investments
+
   belongs_to :bus
 
   def self.sorted_by_score

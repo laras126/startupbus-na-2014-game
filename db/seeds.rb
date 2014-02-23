@@ -1,13 +1,55 @@
 ['northeast', 'westcoast', 'midwest'].each do |region|
-  Bus.create(:name => region)
+  Bus.find_or_create_by(:name => region)
 end
 
 ['whatsapp', 'twitter', 'facebook', 'github'].each do |startup_name|
-  Team.create(:name => startup_name, :website => "#{startup_name}.com", :bus_id => 1,
+  bus = Bus.find_by(name: "northeast")
+
+  team = Team.find_or_create_by(:name => startup_name, :website => "#{startup_name}.com",
               :twitter_handle => "@#{startup_name}", :facebook_url => "www.facebook.com/#{startup_name}",
               :github_url => "www.github.com/#{startup_name}", :description => "#{startup_name} is worth 20 billion dollars")
+
+  bus.teams << team
 end
 
-User.create(email: "blane@gmail.com", first_name: "Blane", last_name: "Cordes", username: "BC00", name: "Blane Cordes", password: "test1234")
-User.create(email: "blane1@gmail.com", first_name: "Bob", last_name: "Cord", username: "BJC00", name: "Bob Cord", password: "test1234", team_id: 1, team_status: "pending")
-User.create(email: "blane2@gmail.com", first_name: "Boy", last_name: "Cordesss", username: "thing00", name: "Boy Cordesss", password: "test1234")
+%w(
+  blane
+  dan
+  eric
+  nicole
+  juan
+).each do |username|
+  Buspreneur.find_or_create_by(email: "#{username}@gmail.com", username: username)
+end
+
+%w(
+  pinzler
+  alice
+  nate
+).each do |username|
+  conductor = Conductor.find_or_create_by(email: "#{username}@gmail.com", username: username)
+  Bus.find_by(name: "northeast").conductors << conductor
+end
+
+%w(
+  joe
+  steve
+  fred
+  wilson
+  spaldin
+).each do |username|
+  Investor.find_or_create_by(email: "#{username}@gmail.com", username: username)
+end
+
+{
+  'whatsapp' => %w(blane dan),
+  'twitter' => %w(eric nicole),
+  'facebook' => %w(juan)
+}.each do |team_name, usernames|
+  team = Team.find_by(name: team_name)
+
+  usernames.each do |username|
+    buspreneur = Buspreneur.find_by(username: username)
+    team.buspreneurs << buspreneur
+  end
+end
