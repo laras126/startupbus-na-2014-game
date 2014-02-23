@@ -20,12 +20,11 @@ class Omniauthable < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |omniauthable|
+    where(auth.slice(:provider, :uid)).first_or_create.tap do |omniauthable|
       omniauthable.provider = auth.provider
       omniauthable.uid = auth.uid
       omniauthable.name = auth.info.name
       omniauthable.email = auth.info.email
-      omniauthable.save!
     end
   end
 
